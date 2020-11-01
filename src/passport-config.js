@@ -42,7 +42,7 @@ function checkAuthenticated (req, res, next) {
   if (req.isAuthenticated()) { //passport function will return true if user is logged in
       return next()
   }
-  res.redirect('/login')
+  res.redirect('/authors') //tu wczesniej bylo /login
 }
 //checked user should not see login page via url //middleware function
 function checkNotAuthenticated(req, res, next) {

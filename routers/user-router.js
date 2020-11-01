@@ -24,11 +24,11 @@ router.use(passport.session())
 
 
 router.get('/', checkAuthenticated, (req, res) => {
-    res.render('index.hbs', {name: req.user.name})
+    res.render('index', {name: req.user.name})
 })
 
 router.get('/login', checkNotAuthenticated, (req,res) => {
-    res.render('login.hbs') 
+    res.render('login', { title: 'Login' }) 
 })
 
 router.post('/login', checkNotAuthenticated, passport.authenticate('local', {
@@ -38,22 +38,22 @@ router.post('/login', checkNotAuthenticated, passport.authenticate('local', {
 })) 
 
 router.get('/register', checkNotAuthenticated, (req,res) => {
-    res.render('register.hbs') 
+    res.render('register', { title: 'Register' }) 
 })
 
 router.post('/register', checkNotAuthenticated, async (req, res) => {
     if ( req.body.password.length < 7) {
-       return res.render('register.hbs', {error: 'Password must contain minimum 6 characters'})
+       return res.render('register', {error: 'Password must contain minimum 6 characters'})
      }
     if ( req.body.password.includes('password')) {
-        return res.render('register.hbs', {error: 'Password can not contain "password" '})
+        return res.render('register', {error: 'Password can not contain "password" '})
     }
 
      let email = req.body.email
     const user = await User.findOne({ email })
     
     if (user) {
-        return res.render('register.hbs', {error: 'The email is already used'})
+        return res.render('register', {error: 'The email is already used'})
     }
 
     try {
