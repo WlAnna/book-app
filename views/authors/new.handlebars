@@ -1,8 +1,15 @@
-<h2>New Author</h2>
+{{> header }}
 
-{{errorMessage}}
-<form action="/authors" method="POST">
-{{>formFields}}
-<a href="/authors">Cancel</a>
-<button type="submit">Create</button>
+<h2 class="page-header">New Author</h2>
+
+<div class="error-message">{{errorMessage}}</div>
+<form action="/authors" method="POST" encypte="multipart/form-data">
+    {{>formFieldsAuthor}}
+    <div class="form-row form-row-end btn-row form-row-first ">
+        <a href="/authors" class="btn btn-danger">Cancel</a>
+        <button class="btn btn-primary btn-main " type="submit">Create</button>
+    </div>
+
 </form>
+
+{{>footer}}
