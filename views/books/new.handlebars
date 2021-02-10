@@ -1,0 +1,15 @@
+{{> header }}
+
+<h2 class="page-header">New Book</h2>
+
+{{error}}
+{{errorMessage}}
+<form action="/books" method="POST" enctype="multipart/form-data">
+    {{>formFieldsBook}}
+    <div class="form-row form-row-end btn-row form-row-first ">
+        <a class="btn btn-danger" href="/books">Cancel</a>
+        <button class="btn btn-primary btn-main" type="submit">Create</button>
+    </div>
+</form>
+
+{{>footer}}

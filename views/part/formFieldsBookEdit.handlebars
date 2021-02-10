@@ -1,0 +1,38 @@
+<div class="form-row">
+    <div class="form-item">
+        <label>Title</label>
+        <input type="text" name="title" value="{{book.title}}">
+    </div>
+    <div class="form-item">
+        <label>Author</label>
+        <select name="author">
+            {{#each authors}}
+                {{#select this.author}}
+            <option label="{{this.author}}" value="{{this.authorId}}" name="author"></option>
+                {{/select}}
+            {{/each}}
+    </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-item">
+        <label>Publish Date</label>
+        <input type="date" name="publishDate" value="{{book.publishDate}}">
+    </div>
+    <div class="form-item">
+    <label>Page Count</label>
+        <input type="number" name="pageCount" min="1"
+                value="{{book.pageCount}}">
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-item form-item-no-grow book-grid">
+        <img class="book-cover-medium" src="data:image/png;base64,{{book.cover}}" alt="DB Image">
+    </div>
+    <div class="form-item">
+        <label>description</label>
+        <textarea name="description" value="{{book.description}}"></textarea>
+    </div>
+</div>
+

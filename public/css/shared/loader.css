@@ -1,0 +1,40 @@
+:root {
+    --background-color-btn-loadMore-hover: hsl(var(--color-base-hue), 40%, 19%);	
+    --form-label-font-color: var(--form-label-font-color);
+}
+
+.content {
+    display: none;
+}
+
+.form-row-center {
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.loadMore {
+    background-color: var(--form-input-background-color);
+    color: var(--form-label-font-color);
+    font-family: Lato;
+    border: none;
+    padding-top: .9rem;
+    padding-bottom: .9rem;
+    margin-top: 2rem;
+}
+
+.loadMore:hover {
+    background-color: var(--background-color-btn-loadMore-hover);
+}
+
+.loadMore:focus {
+    outline: none;
+}
+
+.noContent {
+    color: var(--form-label-font-color) !important;
+    background-color: transparent !important;
+    pointer-events: none;
+}
+
+
+

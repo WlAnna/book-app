@@ -1,0 +1,12 @@
+{{> header }}
+
+<h2 class="page-header">Edit Author</h2>
+
+{{errorMessage}}
+<form action="/authors/{{author.author.id}}?_method=PUT" method="POST">
+{{>formFieldsAuthor}}
+<div class="form-row form-row-end btn-row">
+    <a href="/authors/{{author.author.id}}" class="btn btn-danger">Cancel</a>
+    <button class="btn btn-primary" type="submit">Update</button>
+</div>
+</form>

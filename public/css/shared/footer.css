@@ -1,0 +1,13 @@
+:root {
+    --footer-border-line: var(--form-input-background-color);
+}
+
+footer {
+    height: 5rem;
+    border-top: 0.1px solid var(--footer-border-line);
+    margin-top: 4.5rem;
+}
+
+p {
+    color: var(--form-label-font-color);
+}

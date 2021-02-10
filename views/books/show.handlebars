@@ -1,0 +1,29 @@
+{{> header }}
+
+<h2 class="page-header">{{book.title}}</h2>
+
+<div class="book-details">
+    <div>
+        <img class="book-cover" src="data:image/png;base64,{{book.cover}}" alt="DB Image">
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary book-details-edit-button" href="/books/{{book.id}}/edit">Edit</a>
+            <form method="POST" action="/books/{{book.id}}?_method=DELETE">
+                <button type="submit" class="btn btn-danger book-details-delete-button"> Delete</button>
+            </form>
+            <a class="btn btn-primary book-details-author-button" href="/authors/{{book.authorId}}">View Author</a>
+        </div>
+    </div>
+    <div class="book-details-grid">
+        <div class="book-details-label">Author:</div>
+        <div>{{book.authorName}}</div>
+        <div class="book-details-label">Publish Date:</div>
+        <div>{{book.publishDate}}</div>
+        <div class="book-details-label">Page Count:</div>
+        <div>{{book.pageCount}}</div>
+        <div class="book-details-label">Page Description:</div>
+        <div>{{book.description}}</div>
+    </div>
+</div>
+
+
+{{>footer}}
